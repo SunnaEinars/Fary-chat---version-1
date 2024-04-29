@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <style>
+    </style>
+</head>
+<body>
+
+    <div class="site-title">
+        <h1>Fary Chat</h1>
+    </div>
+    <div class="rooms-container">
+        <div class="rooms-available">
+            <ul class="available-rooms">
+                <!-- Here go the rooms -->
+            </ul>
+
+        </div>
+        <div id="roomCreation">
+            <input type="text" id="newRoomName" placeholder="Room Name"/>
+            <button id="createRoom">Create Room</button>
+        </div>
+    </div>
+    <div class="this-rooms-container">
+        <div class="chat-container">
+            <ul id="messages"></ul>
+            <form id="form" action="">
+            <input id="input" autocomplete="off" /><button>Send</button>
+            </form>
+        </div>
+        <div class="this-room-sidebar">
+            <h3>Current Room</h3>
+            <div class="current-room">
+                <!-- Here go the current room name -->
+            </div>
+            <h3>Active users</h3>
+            <div class="current-users">
+                 <!-- Here go the current users -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

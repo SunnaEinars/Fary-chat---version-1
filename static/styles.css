@@ -1,0 +1,228 @@
+body { 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0; 
+    padding: 0; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.site-title {
+    width: 100%;
+    margin-top: 100px;
+    border-bottom: 1px solid;
+    text-align: center;
+}
+
+.rooms-container {
+    width: 600px;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 2px 1px 2px 1px #dbd0d0;
+}
+
+.available-rooms {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    list-style: none;
+}
+
+.rooms-available {
+    flex: 2;
+}
+
+.roomCreation {
+    flex: 1;
+}
+
+.room-button {
+    background-color: lightblue;
+    border: 1px solid rgb(18, 132, 170);
+    border-radius: 15px;
+    min-width: 70px;
+}
+
+.room-buton:active {
+    background-color: pink;
+}
+
+#newRoomName {
+    border: 1px solid black;
+    padding: 3px;
+}
+
+#roomCreation input[type=text] {
+    padding: 5px;
+}
+
+#createRoom {
+    background-color: orange;
+    padding: 5px;
+    border: 1px solid rgb(185, 130, 27);
+    border-radius: 5px;
+    min-width: 100px;
+
+}
+
+.this-rooms-container {
+
+    padding: 10px 15px;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 2px 1px 2px 1px #dbd0d0;
+}
+
+.this-room-sidebar {
+    border: 1px solid orange;
+    flex: 1;
+    border: 2px solid #cbc2c2;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: #fff;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 500px; /* Adjust to fit content */
+    overflow: hidden;
+}
+
+.this-room-sidebar h3 {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-bottom: 2px solid black;
+}
+
+
+
+.current-users li {
+    list-style: none;
+}
+
+.chat-container {
+    width: 60%;
+    flex: 2;
+    border: 2px solid #cbc2c2;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 500px; /* Adjust to fit content */
+    overflow: hidden;
+    position: relative;
+}
+
+.this-room-sidebar, .chat-container {
+    padding: 1rem;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Make messages scrollable */
+    flex-grow: 1; /* Allow messages to fill the space */
+}
+
+#messages > li { 
+    padding: 0.5rem 1rem; 
+}
+
+#messages > li:nth-child(odd) { 
+    background: #efefef; 
+}
+
+#form { 
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0.25rem;
+    position: absolute; /* Changed to absolute within the chat-container */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    height: 3rem;
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+    position: absolute;
+}
+
+#input {
+    width: 80%;
+}
+
+#form > button {
+    width: 20%;
+}
+
+#input, #form > button {
+    margin: 0 0.25rem; /* Adjust as needed */
+}
+
+#input { 
+    border: none;
+    padding: 0 1rem; 
+    flex-grow: 1; 
+    border-radius: 2rem; 
+    margin: 0.25rem; 
+}
+
+#input:focus { 
+    outline: none; 
+}
+
+#form > button { 
+    background: #333; 
+    border: none; 
+    padding: 0 1rem; 
+    border-radius: 3px; 
+    outline: none; 
+    color: #fff; 
+}
+
+
+/* delete room button */
+
+.available-rooms li {
+    position: relative; /* Needed to position the delete button absolutely */
+    list-style: none;
+    background-color: #f0f0f0; /* Light grey background */
+    cursor: pointer;
+    overflow: visible; /* Allows children to overflow the boundaries of the li */
+}
+
+.delete-room-button {
+    position: absolute;
+    top: -10px; /* Shift up to partially overflow the top boundary */
+    right: -10px; /* Shift right to partially overflow the right boundary */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* Make it round */
+    color: white;
+    background-color: red; /* Red background for visibility */
+    border: 1px solid white; /* White border to enhance visibility against the list background */
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional: adds shadow for better visibility */
+}
+
+.room-name {
+    flex-grow: 1;
+    padding-right: 30px; /* Ensure text does not go under the delete button */
+}
+
